@@ -1,0 +1,40 @@
+{
+  "modules": {
+    "top": {
+      "netnames": {
+        "OTHER_READY": {"bits": ["m0"]},
+        "ctrl_other": {"bits": ["m1"]},
+        "and_out": {"bits": ["m2"]},
+        "src_ff": {"bits": ["m3"]},
+        "dst_ff": {"bits": ["m4"]}
+      },
+      "cells": {
+        "u_and": {
+          "type": "$and",
+          "connections": {
+            "A": ["m0"],
+            "B": ["m1"],
+            "Y": ["m2"]
+          }
+        },
+        "u_src_ff": {
+          "type": "$dffe",
+          "connections": {
+            "Q": ["m3"],
+            "D": ["x1"],
+            "EN": ["m2"],
+            "CLK": ["c1"]
+          }
+        },
+        "u_dst_ff": {
+          "type": "$dffe",
+          "connections": {
+            "Q": ["m4"],
+            "D": ["m3"],
+            "CLK": ["c2"]
+          }
+        }
+      }
+    }
+  }
+}

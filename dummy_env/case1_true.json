@@ -1,0 +1,40 @@
+{
+  "modules": {
+    "top": {
+      "netnames": {
+        "ACCEPT_UART0_INTRDY": {"bits": ["n0"]},
+        "ctrl_other": {"bits": ["n1"]},
+        "and_out": {"bits": ["n2"]},
+        "src_ff": {"bits": ["n3"]},
+        "dst_ff": {"bits": ["n4"]}
+      },
+      "cells": {
+        "u_and": {
+          "type": "$and",
+          "connections": {
+            "A": ["n0"],
+            "B": ["n1"],
+            "Y": ["n2"]
+          }
+        },
+        "u_src_ff": {
+          "type": "$dffe",
+          "connections": {
+            "Q": ["n3"],
+            "D": ["d1"],
+            "EN": ["n2"],
+            "CLK": ["c1"]
+          }
+        },
+        "u_dst_ff": {
+          "type": "$dffe",
+          "connections": {
+            "Q": ["n4"],
+            "D": ["n3"],
+            "CLK": ["c2"]
+          }
+        }
+      }
+    }
+  }
+}
