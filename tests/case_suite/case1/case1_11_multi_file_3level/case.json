@@ -1,0 +1,338 @@
+{
+  "creator": "Yosys 0.63+173 (git sha1 66306a8ca-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
+  "modules": {
+    "system_top_11": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:1.1-29.10"
+      },
+      "ports": {
+        "CK4CI_S11": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "MC_CK_S11": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d_in": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "control_hint": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "q_out": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "q_dst": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:15$1": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:15.24-15.59"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 5 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$flatten\\u_seed.\\u_ffw.\\u_ff.$auto$ff.cc:337:slice$9": {
+          "hide_name": 1,
+          "type": "$dffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:7.5-10.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 4 ],
+            "EN": [ 9 ],
+            "Q": [ 6 ]
+          }
+        },
+        "$procdff$8": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:26.5-28.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 3 ],
+            "D": [ 6 ],
+            "Q": [ 7 ]
+          }
+        },
+        "u_seed": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:17.17-22.6",
+            "module": "layer2_seed",
+            "module_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:1.1-16.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_seed.u_ffw": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:10.16-15.6",
+            "hdlname": "u_seed u_ffw",
+            "module": "ff_wrapper",
+            "module_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:1.1-17.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_seed.u_ffw.u_ff": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:9.17-14.6",
+            "hdlname": "u_seed u_ffw u_ff",
+            "module": "ff_datapath",
+            "module_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:1.1-11.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "ACCEPT_UART11_INTRDY": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:14.10-14.30"
+          }
+        },
+        "CK4CI_S11": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:2.17-2.26"
+          }
+        },
+        "MC_CK_S11": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:3.17-3.26"
+          }
+        },
+        "and_layer": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:10.10-10.19"
+          }
+        },
+        "control_hint": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:5.17-5.29"
+          }
+        },
+        "d_in": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:4.17-4.21"
+          }
+        },
+        "q_dst": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:7.17-7.22"
+          }
+        },
+        "q_out": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:6.17-6.22"
+          }
+        },
+        "source_q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/system_top_11.sv:11.10-11.18"
+          }
+        },
+        "u_seed.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_seed clk",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:2.17-2.20"
+          }
+        },
+        "u_seed.d": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "u_seed d",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:3.17-3.18"
+          }
+        },
+        "u_seed.en": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "u_seed en",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:4.17-4.19"
+          }
+        },
+        "u_seed.enable_b": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "u_seed enable_b",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:7.10-7.18"
+          }
+        },
+        "u_seed.q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_seed q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/layer2_seed.sv:5.17-5.18"
+          }
+        },
+        "u_seed.u_ffw.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw clk",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:2.17-2.20"
+          }
+        },
+        "u_seed.u_ffw.d": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw d",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:3.17-3.18"
+          }
+        },
+        "u_seed.u_ffw.en": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw en",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:4.17-4.19"
+          }
+        },
+        "u_seed.u_ffw.ff_q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw ff_q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:7.10-7.14"
+          }
+        },
+        "u_seed.u_ffw.q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_wrapper.sv:5.17-5.18"
+          }
+        },
+        "u_seed.u_ffw.u_ff.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw u_ff clk",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:2.17-2.20"
+          }
+        },
+        "u_seed.u_ffw.u_ff.d": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw u_ff d",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:3.17-3.18"
+          }
+        },
+        "u_seed.u_ffw.u_ff.en": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw u_ff en",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:4.17-4.19"
+          }
+        },
+        "u_seed.u_ffw.u_ff.q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_seed u_ffw u_ff q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_11_multi_file_3level/src/ff_datapath.sv:5.17-5.18"
+          }
+        }
+      }
+    }
+  }
+}

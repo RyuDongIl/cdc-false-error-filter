@@ -7,6 +7,7 @@ __pycache__/
 # Yosys/JSON artifacts
 *.json
 !dummy_env/*.json
+!tests/case_suite/**/*.json
 
 # OS
 .DS_Store
