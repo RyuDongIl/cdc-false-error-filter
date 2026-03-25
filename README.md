@@ -45,3 +45,17 @@ python main.py \
   - `YOSYS_BIN=/tmp/oss-cad-suite-arm64/oss-cad-suite/bin/yosys bash dummy_env/parse_case_with_yosys.sh`  # 단일 엔트리: case1_true/false를 같이 갱신
 
 기본적으로 스크립트는 `YOSYS_BIN` 환경변수가 있으면 그걸 쓰고, 없으면 시스템 `yosys`를 사용합니다.
+
+## Case1 테스트 스위트
+
+- 다중 파일/계층/예외 케이스를 포함한 `case1` 테스트 케이스를 `tests/case_suite/case1/`에 추가했습니다.
+- 각 케이스 구조
+  - `meta.json`: 입력/기대결과/소스 파일 목록
+  - `src/*.sv`: Verilog 소스
+  - `case.json`: Yosys(`.yosys` 파서)로 만든 참조 JSON
+
+테스트 실행:
+```bash
+YOSYS_BIN=/tmp/oss-cad-suite-arm64/oss-cad-suite/bin/yosys python3 tests/scripts/build_case_suite_json.py
+pytest tests/test_case_suite.py
+```

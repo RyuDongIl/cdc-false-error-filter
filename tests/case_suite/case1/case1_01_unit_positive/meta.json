@@ -1,0 +1,17 @@
+{
+  "case_id": "case1_01_unit_positive",
+  "rule": "case1",
+  "src_ff": "q_out",
+  "dst_ff": "q_dst",
+  "src_clk": "CK4CI_S0",
+  "dst_clk": "MC_CK_S0",
+  "max_depth": 5,
+  "expected": {
+    "is_false_path": true,
+    "contains": "ACCEPT"
+  },
+  "source_files": [
+    "top.sv"
+  ],
+  "notes": ""
+}

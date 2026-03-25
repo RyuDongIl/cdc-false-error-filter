@@ -1,0 +1,346 @@
+{
+  "creator": "Yosys 0.63+173 (git sha1 66306a8ca-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:1.1-37.10"
+      },
+      "ports": {
+        "CK4CI_S0": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "MC_CK_S0": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d_in": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "p1": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "p2": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "p3": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "p4": {
+          "direction": "input",
+          "bits": [ 8 ]
+        },
+        "p5": {
+          "direction": "input",
+          "bits": [ 9 ]
+        },
+        "q_out": {
+          "direction": "output",
+          "bits": [ 10 ]
+        },
+        "q_dst": {
+          "direction": "output",
+          "bits": [ 11 ]
+        }
+      },
+      "cells": {
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:22$1": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:22.17-22.40"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12 ],
+            "B": [ 5 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:23$2": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:23.17-23.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13 ],
+            "B": [ 6 ],
+            "Y": [ 14 ]
+          }
+        },
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:24$3": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:24.17-24.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14 ],
+            "B": [ 7 ],
+            "Y": [ 15 ]
+          }
+        },
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:25$4": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:25.17-25.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 15 ],
+            "B": [ 8 ],
+            "Y": [ 16 ]
+          }
+        },
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:26$5": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:26.17-26.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 16 ],
+            "B": [ 9 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$12": {
+          "hide_name": 1,
+          "type": "$dffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:29.5-32.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 4 ],
+            "EN": [ 17 ],
+            "Q": [ 10 ]
+          }
+        },
+        "$procdff$10": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:34.5-36.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 3 ],
+            "D": [ 10 ],
+            "Q": [ 11 ]
+          }
+        }
+      },
+      "netnames": {
+        "ACCEPT_DPT5_INTRDY": {
+          "hide_name": 0,
+          "bits": [ 12 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:13.10-13.28"
+          }
+        },
+        "CK4CI_S0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:2.17-2.25"
+          }
+        },
+        "MC_CK_S0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:3.17-3.25"
+          }
+        },
+        "and_out": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:19.10-19.17"
+          }
+        },
+        "d_in": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:4.17-4.21"
+          }
+        },
+        "n1": {
+          "hide_name": 0,
+          "bits": [ 13 ],
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:14.21-14.23"
+          }
+        },
+        "n2": {
+          "hide_name": 0,
+          "bits": [ 14 ],
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:15.21-15.23"
+          }
+        },
+        "n3": {
+          "hide_name": 0,
+          "bits": [ 15 ],
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:16.21-16.23"
+          }
+        },
+        "n4": {
+          "hide_name": 0,
+          "bits": [ 16 ],
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:17.21-17.23"
+          }
+        },
+        "n5": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:18.21-18.23"
+          }
+        },
+        "p1": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:5.17-5.19"
+          }
+        },
+        "p2": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:6.17-6.19"
+          }
+        },
+        "p3": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:7.17-7.19"
+          }
+        },
+        "p4": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:8.17-8.19"
+          }
+        },
+        "p5": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:9.17-9.19"
+          }
+        },
+        "q_dst": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:11.17-11.22"
+          }
+        },
+        "q_out": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_08_depth_edge/src/top.sv:10.17-10.22"
+          }
+        }
+      }
+    }
+  }
+}

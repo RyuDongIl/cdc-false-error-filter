@@ -1,0 +1,17 @@
+{
+  "case_id": "case1_04_invalid_src_clk",
+  "rule": "case1",
+  "src_ff": "q_out",
+  "dst_ff": "q_dst",
+  "src_clk": "SLOW_CLK",
+  "dst_clk": "MC_CK_S0",
+  "max_depth": 5,
+  "expected": {
+    "is_false_path": false,
+    "contains": "source clock domain"
+  },
+  "source_files": [
+    "top.sv"
+  ],
+  "notes": ""
+}

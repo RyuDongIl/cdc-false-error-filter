@@ -1,0 +1,256 @@
+{
+  "creator": "Yosys 0.63+173 (git sha1 66306a8ca-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:1.1-25.10"
+      },
+      "ports": {
+        "CK4CI_S0": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "MC_CK_S0": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d_in": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "ctrl_other": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "q_out": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "q_dst": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+        "$and$/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:11$3": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:11.23-11.55"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 8 ],
+            "B": [ 5 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$flatten\\u_dst.$procdff$7": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/dst_block.sv:6.5-8.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 3 ],
+            "D": [ 6 ],
+            "Q": [ 7 ]
+          }
+        },
+        "$flatten\\u_src.$auto$ff.cc:337:slice$8": {
+          "hide_name": 1,
+          "type": "$dffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:7.5-10.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 4 ],
+            "EN": [ 9 ],
+            "Q": [ 6 ]
+          }
+        },
+        "u_dst": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:20.15-24.6",
+            "module": "dst_block",
+            "module_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/dst_block.sv:1.1-9.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "u_src": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:13.15-18.6",
+            "module": "src_block",
+            "module_src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:1.1-11.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "ACCEPT_UART4_INTRDY": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:9.10-9.29"
+          }
+        },
+        "CK4CI_S0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:2.17-2.25"
+          }
+        },
+        "MC_CK_S0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:3.17-3.25"
+          }
+        },
+        "and_root": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:10.10-10.18"
+          }
+        },
+        "ctrl_other": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:5.17-5.27"
+          }
+        },
+        "d_in": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:4.17-4.21"
+          }
+        },
+        "q_dst": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:7.17-7.22"
+          }
+        },
+        "q_out": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/top.sv:6.17-6.22"
+          }
+        },
+        "u_dst.clk": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "u_dst clk",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/dst_block.sv:2.17-2.20"
+          }
+        },
+        "u_dst.d": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_dst d",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/dst_block.sv:3.17-3.18"
+          }
+        },
+        "u_dst.q": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "u_dst q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/dst_block.sv:4.17-4.18"
+          }
+        },
+        "u_src.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "u_src clk",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:2.17-2.20"
+          }
+        },
+        "u_src.d": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "u_src d",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:3.17-3.18"
+          }
+        },
+        "u_src.en": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "u_src en",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:4.17-4.19"
+          }
+        },
+        "u_src.q": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "u_src q",
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_06_multi_file_positive/src/src_block.sv:5.17-5.18"
+          }
+        }
+      }
+    }
+  }
+}

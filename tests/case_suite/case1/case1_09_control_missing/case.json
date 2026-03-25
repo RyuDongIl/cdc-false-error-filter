@@ -1,0 +1,114 @@
+{
+  "creator": "Yosys 0.63+173 (git sha1 66306a8ca-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:1.1-16.10"
+      },
+      "ports": {
+        "CK4CI_S0": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "MC_CK_S0": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d_in": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "q_out": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "q_dst": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
+      },
+      "cells": {
+        "$procdff$3": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:13.5-15.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 3 ],
+            "D": [ 5 ],
+            "Q": [ 6 ]
+          }
+        },
+        "$procdff$4": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:9.5-11.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 4 ],
+            "Q": [ 5 ]
+          }
+        }
+      },
+      "netnames": {
+        "CK4CI_S0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:2.17-2.25"
+          }
+        },
+        "MC_CK_S0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:3.17-3.25"
+          }
+        },
+        "d_in": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:4.17-4.21"
+          }
+        },
+        "q_dst": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:6.17-6.22"
+          }
+        },
+        "q_out": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/root/.openclaw/workspace/cdc-false-error-filter/tests/case_suite/case1/case1_09_control_missing/src/top.sv:5.17-5.22"
+          }
+        }
+      }
+    }
+  }
+}
