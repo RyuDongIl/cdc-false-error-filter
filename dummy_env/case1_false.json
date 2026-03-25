@@ -7,11 +7,11 @@
         "src": "dummy_env/case1_false.v:1.1-25.10"
       },
       "ports": {
-        "clk_a": {
+        "CK4CI_S0": {
           "direction": "input",
           "bits": [ 2 ]
         },
-        "clk_b": {
+        "MC_CK_S0": {
           "direction": "input",
           "bits": [ 3 ]
         },
@@ -100,6 +100,20 @@
         }
       },
       "netnames": {
+        "CK4CI_S0": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:2.17-2.25"
+          }
+        },
+        "MC_CK_S0": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:3.17-3.25"
+          }
+        },
         "OTHER_READY": {
           "hide_name": 0,
           "bits": [ 7 ],
@@ -112,20 +126,6 @@
           "bits": [ 9 ],
           "attributes": {
             "src": "dummy_env/case1_false.v:12.10-12.17"
-          }
-        },
-        "clk_a": {
-          "hide_name": 0,
-          "bits": [ 2 ],
-          "attributes": {
-            "src": "dummy_env/case1_false.v:2.17-2.22"
-          }
-        },
-        "clk_b": {
-          "hide_name": 0,
-          "bits": [ 3 ],
-          "attributes": {
-            "src": "dummy_env/case1_false.v:3.17-3.22"
           }
         },
         "ctrl_other": {

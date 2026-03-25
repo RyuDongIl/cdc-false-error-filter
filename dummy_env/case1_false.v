@@ -1,6 +1,6 @@
 module top(
-    input  wire clk_a,
-    input  wire clk_b,
+    input  wire CK4CI_S0,
+    input  wire MC_CK_S0,
     input  wire d_in,
     output reg  q_out,
     output reg  q_dst
@@ -14,12 +14,12 @@ module top(
 
     assign and_out   = OTHER_READY & ctrl_other;
 
-    always @(posedge clk_a) begin
+    always @(posedge CK4CI_S0) begin
         if (and_out)
             q_out <= d_in;
     end
 
-    always @(posedge clk_b) begin
+    always @(posedge MC_CK_S0) begin
         q_dst <= q_out;
     end
 endmodule

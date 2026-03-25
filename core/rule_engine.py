@@ -26,6 +26,10 @@ CTRL_PINS = {"EN", "E", "SET", "RST", "ARST", "R", "SR", "SN", "RN", "CLR"}
 
 ACCEPT_INTRDY_RE = re.compile(r"^ACCEPT.*_INTRDY$")
 
+# Clock-domain family filters for Case 1
+SRC_CLK_DOMAIN_RE = re.compile(r"^CK4CI", re.IGNORECASE)
+DST_CLK_DOMAIN_RE = re.compile(r"^MC_CK", re.IGNORECASE)
+
 def _get_design_module(circuit: Dict[str, Any]) -> Dict[str, Any]:
     """Handle both flattened and module-wrapped Yosys JSON forms."""
     if "netnames" in circuit and "cells" in circuit:
@@ -163,6 +167,16 @@ def _matches_intrdy_name(net_id: str, bit_to_names: Dict[str, List[str]]) -> Opt
     return None
 
 
+def _validate_clk_domains(src_clk: str, dst_clk: str) -> Tuple[bool, str]:
+    if not SRC_CLK_DOMAIN_RE.match((src_clk or "").strip()):
+        return False, "source clock domain must match CK4CI family"
+
+    if not DST_CLK_DOMAIN_RE.match((dst_clk or "").strip()):
+        return False, "destination clock domain must match MC_CK family"
+
+    return True, ""
+
+
 def check_false_path_rules(
     circuit: Dict[str, Any],
     src_ff: str,
@@ -177,6 +191,10 @@ def check_false_path_rules(
 
     Return (is_false_path, reason).
     """
+    ok, reason = _validate_clk_domains(src_clk, dst_clk)
+    if not ok:
+        return False, reason
+
     circuit = _get_design_module(circuit)
 
     bit_to_names = _build_net_to_names(circuit)

@@ -15,15 +15,16 @@ CDC false-path candidate filtering (Yosys + Python).
 - Case 1 (Source FF Enable Path) 룰 엔진 구현: `check_false_path_rules`
   - Src FF(`--src_ff`)의 enable/제어 신호로부터 역방향 탐색
   - 최대 깊이(default 5) 내에서 `ACCEPT.*_INTRDY` 패턴 매칭 시 false path 판정
+  - Clk Domain 제약: `--src_clk`는 `CK4CI*` 계열, `--dst_clk`는 `MC_CK*` 계열만 통과
 
 ## 실행
 ```bash
 python main.py \
-  --json dummy_env/case1_yosys.json \
-  --src_ff top.u_reg \
-  --dst_ff top.v_reg \
-  --src_clk clk_a \
-  --dst_clk clk_b
+  --json dummy_env/case1_true.json \
+  --src_ff q_out \
+  --dst_ff q_dst \
+  --src_clk CK4CI_S0 \
+  --dst_clk MC_CK_S0
 ```
 
 출력 예시:
