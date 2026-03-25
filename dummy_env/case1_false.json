@@ -1,37 +1,159 @@
 {
+  "creator": "Yosys 0.63+173 (git sha1 66306a8ca-dirty, aarch64-linux-gnu-g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)",
   "modules": {
     "top": {
-      "netnames": {
-        "OTHER_READY": {"bits": ["m0"]},
-        "ctrl_other": {"bits": ["m1"]},
-        "and_out": {"bits": ["m2"]},
-        "src_ff": {"bits": ["m3"]},
-        "dst_ff": {"bits": ["m4"]}
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "dummy_env/case1_false.v:1.1-25.10"
+      },
+      "ports": {
+        "clk_a": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "clk_b": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "d_in": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "q_out": {
+          "direction": "output",
+          "bits": [ 5 ]
+        },
+        "q_dst": {
+          "direction": "output",
+          "bits": [ 6 ]
+        }
       },
       "cells": {
-        "u_and": {
+        "$and$dummy_env/case1_false.v:15$1": {
+          "hide_name": 1,
           "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "dummy_env/case1_false.v:15.24-15.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
           "connections": {
-            "A": ["m0"],
-            "B": ["m1"],
-            "Y": ["m2"]
+            "A": [ 7 ],
+            "B": [ 8 ],
+            "Y": [ 9 ]
           }
         },
-        "u_src_ff": {
+        "$auto$ff.cc:337:slice$8": {
+          "hide_name": 1,
           "type": "$dffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "dummy_env/case1_false.v:17.5-20.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
           "connections": {
-            "Q": ["m3"],
-            "D": ["x1"],
-            "EN": ["m2"],
-            "CLK": ["c1"]
+            "CLK": [ 2 ],
+            "D": [ 4 ],
+            "EN": [ 9 ],
+            "Q": [ 5 ]
           }
         },
-        "u_dst_ff": {
-          "type": "$dffe",
+        "$procdff$6": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "dummy_env/case1_false.v:22.5-24.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
           "connections": {
-            "Q": ["m4"],
-            "D": ["m3"],
-            "CLK": ["c2"]
+            "CLK": [ 3 ],
+            "D": [ 5 ],
+            "Q": [ 6 ]
+          }
+        }
+      },
+      "netnames": {
+        "OTHER_READY": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:10.10-10.21"
+          }
+        },
+        "and_out": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:12.10-12.17"
+          }
+        },
+        "clk_a": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:2.17-2.22"
+          }
+        },
+        "clk_b": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:3.17-3.22"
+          }
+        },
+        "ctrl_other": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:13.10-13.20"
+          }
+        },
+        "d_in": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:4.17-4.21"
+          }
+        },
+        "q_dst": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:6.17-6.22"
+          }
+        },
+        "q_out": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "dummy_env/case1_false.v:5.17-5.22"
           }
         }
       }

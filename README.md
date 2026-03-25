@@ -34,3 +34,13 @@ python main.py \
 ## 보안 주의
 - 실 설계 RTL과 실제 생성 JSON은 **로컬 사내망**에서만 사용
 - 이 레포의 핵심은 알고리즘 구조와 예외처리
+
+## Yosys 버전 정렬(사내-외부 호환)
+
+사내 기준(예: 2025-03-24 Release, `0.63+173`)에 맞추려면, 아래 방식으로 `0.63+173` 바이너리를 사용하세요.
+
+- OSS CAD Suite(arm64) 다운로드: `oss-cad-suite-linux-arm64-20260324.tgz`
+- 실행 예:
+  - `YOSYS_BIN=/tmp/oss-cad-suite-arm64/oss-cad-suite/bin/yosys bash dummy_env/parse_case_with_yosys.sh`  # 단일 엔트리: case1_true/false를 같이 갱신
+
+기본적으로 스크립트는 `YOSYS_BIN` 환경변수가 있으면 그걸 쓰고, 없으면 시스템 `yosys`를 사용합니다.
