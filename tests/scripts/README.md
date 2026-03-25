@@ -5,3 +5,6 @@
 
 환경변수:
 - `YOSYS_BIN` (기본값: `yosys`)
+
+The generator reads `meta.json` in each case and uses `top_module` as Yosys entry module.
+If `top_module` is missing, it auto-fallback to unique module in the case sources.

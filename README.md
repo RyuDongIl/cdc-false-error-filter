@@ -59,3 +59,8 @@ python main.py \
 YOSYS_BIN=/tmp/oss-cad-suite-arm64/oss-cad-suite/bin/yosys python3 tests/scripts/build_case_suite_json.py
 pytest tests/test_case_suite.py
 ```
+
+## 테스트 스위트 개선 반영
+
+`tests/case_suite`의 `meta.json`에 `top_module`이 추가되었습니다.
+실제 현업 설계에서 top module명이 `top`이 아닐 수 있으므로, Case 검증 시 메타의 `top_module`을 기준으로 Yosys를 실행합니다.

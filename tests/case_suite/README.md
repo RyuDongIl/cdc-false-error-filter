@@ -40,3 +40,8 @@ YOSYS_BIN=/tmp/oss-cad-suite-arm64/oss-cad-suite/bin/yosys \
 python3 -m pytest tests/test_case_suite.py
 ```
 (환경에 따라 pytest가 없으면 동일 로직으로 대체 실행 가능)
+
+## Top module setting
+
+Each case has `meta.json` with `top_module` so Yosys uses the real top design module.
+This avoids dependency on file name (`top.sv`) and handles real project style names.

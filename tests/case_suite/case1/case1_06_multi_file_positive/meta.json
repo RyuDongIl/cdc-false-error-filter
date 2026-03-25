@@ -15,5 +15,6 @@
     "src_block.sv",
     "top.sv"
   ],
-  "notes": ""
+  "notes": "",
+  "top_module": "top"
 }
