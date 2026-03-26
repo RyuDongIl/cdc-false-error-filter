@@ -8,7 +8,7 @@
   "max_depth": 5,
   "expected": {
     "is_false_path": false,
-    "contains": "no control"
+    "contains": "no enable"
   },
   "source_files": [
     "top.sv"
