@@ -21,8 +21,8 @@ FF_TYPES = {
 # Common output ports of combinational cells
 COMBINATIONAL_OUTPUT_PINS = {"Y", "Q", "Z"}
 
-# Candidate control pins on FFs / sequential cells
-CTRL_PINS = {"EN", "E", "SET", "RST", "ARST", "R", "SR", "SN", "RN", "CLR"}
+# Candidate enable pins on FFs / sequential cells
+ENABLE_PINS = {"EN", "E"}
 
 ACCEPT_INTRDY_RE = re.compile(r"^ACCEPT.*_INTRDY$")
 
@@ -112,33 +112,17 @@ def _resolve_src_ff_cell(circuit: Dict[str, Any], src_ff: str) -> Optional[Tuple
     return None
 
 
-def _is_arst_one(cell: Dict[str, Any], pin: str) -> bool:
-    """Return True when ARST value explicitly indicates active (1)."""
-    attrs = cell.get("attributes", {}) or {}
-    if pin not in {"ARST", "RST", "RN", "SN", "CLR", "SR"}:
-        return False
-    val = attrs.get("ARST_VALUE")
-    if val is None:
-        return False
-    return str(val) in {"1", "True", "true", "TRUE", "1'b1"}
-
-
-def _pick_control_nets(cell: Dict[str, Any]) -> List[str]:
-    """Collect candidate control nets from a FF-like cell."""
+def _pick_enable_nets(cell: Dict[str, Any]) -> List[str]:
+    """Collect enable nets from a FF-like cell."""
     conns = cell.get("connections", {}) or {}
-    controls: List[str] = []
+    enables: List[str] = []
 
-    for pin in CTRL_PINS:
+    for pin in ENABLE_PINS:
         if pin in conns:
-            controls.extend(_coerce_connections(conns.get(pin)))
-
-    # Include preset/reset nets only when preset value is asserted (ARST_VALUE == 1)
-    for pin in ["ARST", "ARST_N", "SET", "R", "RN", "SN", "SR", "CLR", "RST"]:
-        if pin in conns and _is_arst_one(cell, pin):
-            controls.extend(_coerce_connections(conns.get(pin)))
+            enables.extend(_coerce_connections(conns.get(pin)))
 
     # drop constants and dedupe
-    return sorted(set(c for c in controls if c not in {"0", "1", "1'b0", "1'b1"}))
+    return sorted(set(c for c in enables if c not in {"0", "1", "1'b0", "1'b1"}))
 
 
 def _extract_net_to_cells(circuit: Dict[str, Any], *, output_pins: Set[str] = None):
@@ -187,7 +171,7 @@ def check_false_path_rules(
     max_depth: int = 5,
 ) -> Tuple[bool, str]:
     """
-    Rule-1: source FF control path reaches root signal matching ACCEPT.*_INTRDY.
+    Rule-1: source FF enable path reaches root signal matching ACCEPT.*_INTRDY.
 
     Return (is_false_path, reason).
     """
@@ -203,21 +187,21 @@ def check_false_path_rules(
         return False, f"source ff not found: {src_ff}"
 
     ff_name, ff_cell = ff_hit
-    control_nets = _pick_control_nets(ff_cell)
-    if not control_nets:
-        return False, f"no control signal on source ff: {ff_name}"
+    enable_nets = _pick_enable_nets(ff_cell)
+    if not enable_nets:
+        return False, f"no enable signal on source ff: {ff_name}"
 
     net_to_cells = _extract_net_to_cells(circuit)
 
     # Direct hit on enable net name
-    for net in control_nets:
+    for net in enable_nets:
         matched = _matches_intrdy_name(net, bit_to_names)
         if matched:
-            return True, f"matched at source control net '{matched}'"
+            return True, f"matched at source enable net '{matched}'"
 
     # BFS/DFS with fixed-depth guard (max_depth)
-    q = deque((net, 0) for net in control_nets)
-    visited = set(control_nets)
+    q = deque((net, 0) for net in enable_nets)
+    visited = set(enable_nets)
 
     while q:
         net_id, depth = q.popleft()
